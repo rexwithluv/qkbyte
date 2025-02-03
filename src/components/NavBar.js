@@ -2,25 +2,25 @@ import Link from "next/link";
 
 export default function NavBar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid">
-                <Link className="navbar-brand" href="#">QKByte</Link>
+                <Link className="navbar-brand text-white" href="#">QKByte</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" href="#">Hardware</Link>
+                            <Link className="nav-link text-white" href="#">Hardware</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" href="#">Periféricos</Link>
+                            <Link className="nav-link text-white" href="#">Periféricos</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" href="#">Software</Link>
+                            <Link className="nav-link text-white" href="#">Software</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" href="#">PCs montados</Link>
+                            <Link className="nav-link text-white" href="#">PCs montados</Link>
                         </li>
                     </ul>
                 </div>
