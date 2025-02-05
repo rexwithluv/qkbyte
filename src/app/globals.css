@@ -34,7 +34,14 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+}
+
+.nav-link {
+  text-decoration: underline;
+}
+
+a:hover, .nav-link:hover{
+  opacity:0.5 ;
 }
 
 @media (prefers-color-scheme: dark) {
