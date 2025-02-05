@@ -1,5 +1,0 @@
-# Componentes
-
-## NavBar
-
-## Footer
