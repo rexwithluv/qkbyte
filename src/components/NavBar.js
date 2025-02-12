@@ -11,16 +11,16 @@ export default function NavBar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link text-white" href="#">Hardware</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-white" href="#">Periféricos</Link>
+                            <Link className="nav-link text-white" href="#">Hardware y periféricos</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-white" href="#">Software</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-white" href="#">PCs montados</Link>
+                        </li>
+                        <li>
+                            <Link href="/contacto" className="text-white">Contacto</Link>
                         </li>
                     </ul>
                 </div>
