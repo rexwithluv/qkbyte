@@ -19,7 +19,7 @@ export default function NavBar() {
                         <li className="nav-item">
                             <Link className="nav-link text-white" href="#">PCs montados</Link>
                         </li>
-                        <li>
+                        <li className="nav-item">
                             <Link href="/contacto" className="text-white">Contacto</Link>
                         </li>
                     </ul>
