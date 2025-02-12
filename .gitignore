@@ -43,3 +43,4 @@ next-env.d.ts
 notas/
 
 .vscode/
+!.vscode/tasks.json
