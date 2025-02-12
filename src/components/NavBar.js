@@ -1,30 +1,66 @@
+"use client";
+
 import Link from "next/link";
+import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
 export default function NavBar() {
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleMenu = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
-        <nav className="navbar navbar-expand-lg bg-dark">
-            <div className="container-fluid">
-                <Link className="navbar-brand text-white" href="#">QKByte</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link text-white" href="#">Hardware y periféricos</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-white" href="#">Software</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-white" href="#">PCs montados</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link href="/contacto" className="nav-link text-white">Contacto</Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    )
+        <AppBar position="static">
+            <Toolbar>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>QKByte</Link>
+                </Typography>
+                <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    sx={{ mr: 2 }}
+                    onClick={handleMenu}
+                >
+                    <MenuIcon />
+                </IconButton>
+                <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                    }}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={handleClose}>
+                        <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Hardware y periféricos</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Software</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>PCs montados</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <Link href="/contacto" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</Link>
+                    </MenuItem>
+                </Menu>
+            </Toolbar>
+        </AppBar >
+    );
 }
