@@ -14,7 +14,7 @@ export default function BarraNavegacion() {
     const cerrarMenu = () => establecerAnclaEl(null);
 
     return (
-        <AppBar position="static">
+        <AppBar sx={{backgroundColor: "darkblue"}} position="static">
             <Toolbar>
                 <Typography variant="h6" sx={{ flexGrow: 1 }}>
                     <Link href="/" color="inherit" underline="none">QKByte</Link>

@@ -7,7 +7,7 @@ export default function PiePagina() {
     return (
         <Box
             component="footer"
-            bgcolor="primary.main"
+            bgcolor="darkblue"
             color="primary.contrastText"
             textAlign="center"
             pt={2}
