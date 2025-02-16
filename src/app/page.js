@@ -1,32 +1,28 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Link from "next/link";
-import qkbyteImage from "@/assets/images/qkbyte.webp";
-import { Box, Typography, Link as MuiLink } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 
 export default function Home() {
   return (
     <Box
-      className={styles.container}
+      component={"div"}
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      mt={5}
+      height="80vh"
     >
-      <Image
-        src={qkbyteImage}
+      <Box
+        component="img"
+        src="/images/qkbyte.png"
         alt="Una imagen con el nombre de nuestro sitio web hecha con IA"
-        className="mb-4"
-        style={{ height: "300px", width: "auto" }}
+        height="350px" width="auto"
       />
 
-      <Typography variant="h1" component="h1" className="mb-4">
+      <Typography variant="h3" >
         Bienvenida/o
       </Typography>
-      <Typography variant="body1" className="mb-3">
-        Te recomendamos <MuiLink href="/login">iniciar sesión</MuiLink> para poder comprar productos.
+      <Typography variant="subtitle1" >
+        Te recomendamos <Link href="/login">iniciar sesión</Link> para poder comprar productos.
       </Typography>
     </Box>
   );
