@@ -1,29 +1,19 @@
 import Link from "next/link";
-import { Box, Typography } from "@mui/material";
 
-export default function PiePagina() {
+export default function Footer() {
     const anyoActual = new Date().getFullYear();
 
     return (
-        <Box
-            component="footer"
-            bgcolor="darkblue"
-            color="primary.contrastText"
-            textAlign="center"
-            pt={2}
-            pb={1}
-        >
-
-            <Typography variant="body2">
+        <div className="bg-primary text-center pt-2">
+            <p>
                 <Link href="/politica-privacidad">Política de privacidad</Link>
                 &nbsp;|&nbsp;
                 <Link href="/terminos">Términos de servicio</Link>
-            </Typography>
 
-            <Typography variant="body2" mt={1}>
+                <br />
+
                 &copy; {anyoActual} QKByte - Todos los derechos reservados
-            </Typography>
-
-        </Box>
+            </p>
+        </div>
     );
 }
