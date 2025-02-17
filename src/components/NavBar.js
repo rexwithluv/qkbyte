@@ -1,6 +1,6 @@
 "use client";
 
-import { AppBar, Toolbar, IconButton, Typography, Menu, Link, MenuItem, useMediaQuery, useTheme, Stack } from "@mui/material";
+import { AppBar, Link, Toolbar, IconButton, Typography, Menu, MenuItem, useMediaQuery, useTheme, Stack } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
@@ -14,12 +14,12 @@ export default function BarraNavegacion() {
     const cerrarMenu = () => establecerAnclaEl(null);
 
     return (
-        <AppBar sx={{backgroundColor: "darkblue"}} position="static">
-            <Toolbar>
-                <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                    <Link href="/" color="inherit" underline="none">QKByte</Link>
-                </Typography>
+        <AppBar position="static" sx={{ backgroundColor: 'darkblue' }}>
 
+            <Toolbar>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>QKByte</Link>
+                </Typography>
                 {esPantallaPequena ? (
                     <>
                         <IconButton
@@ -30,9 +30,10 @@ export default function BarraNavegacion() {
                             sx={{ mr: 2 }}
                             onClick={abrirMenu}
                         >
+                            {/* MenuIcon: Ícono de menú de MUI */}
                             <MenuIcon />
                         </IconButton>
-
+                        {/* Menu: Componente de menú desplegable de MUI */}
                         <Menu
                             id="menu-appbar"
                             anchorEl={anclaEl}
@@ -48,26 +49,27 @@ export default function BarraNavegacion() {
                             open={Boolean(anclaEl)}
                             onClose={cerrarMenu}
                         >
-                            <MenuItem onClick={manejarCerrar}>
-                                <Link href="#" color="inherit" underline="none">Hardware y periféricos</Link>
+                            {/* MenuItem: Elemento de menú de MUI */}
+                            <MenuItem onClick={cerrarMenu}>
+                                <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Hardware y periféricos</Link>
                             </MenuItem>
-                            <MenuItem onClick={manejarCerrar}>
-                                <Link href="#" color="inherit" underline="none" >Software</Link>
+                            <MenuItem onClick={cerrarMenu}>
+                                <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Software</Link>
                             </MenuItem>
-                            <MenuItem onClick={manejarCerrar}>
-                                <Link href="#" color="inherit" underline="none" >PCs montados</Link>
+                            <MenuItem onClick={cerrarMenu}>
+                                <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>PCs montados</Link>
                             </MenuItem>
-                            <MenuItem onClick={manejarCerrar}>
-                                <Link href="/contacto" color="inherit" underline="none" >Contacto</Link>
+                            <MenuItem onClick={cerrarMenu}>
+                                <Link href="/contacto" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</Link>
                             </MenuItem>
                         </Menu>
                     </>
                 ) : (
-                    <Stack direction="row" spacing={2}>
-                        <Link href="#" color="inherit" underline="none" >Hardware y periféricos</Link>
-                        <Link href="#" color="inherit" underline="none" >Software</Link>
-                        <Link href="#" color="inherit" underline="none" >PCs montados</Link>
-                        <Link href="/contacto" color="inherit" underline="none">Contacto</Link>
+                    <Stack spacing={2} direction={"row"}>
+                        <Link href="#" underline="none" color="inherit" >Hardware y periféricos</Link>
+                        <Link href="#" underline="none" color="inherit" >Software</Link>
+                        <Link href="#" underline="none" color="inherit" >PCs montados</Link>
+                        <Link href="/contacto" underline="none" color="inherit">Contacto</Link>
                     </Stack>
                 )}
             </Toolbar>
