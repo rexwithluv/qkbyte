@@ -1,66 +1,46 @@
-import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import Image from 'next/image';
 
-export default function ContactPage() {
+export default function Contacto() {
     return (
-        <Container sx={{ mt: 4, mb: 4 }}>
-            <Typography variant="h3" color="inherit" align={"center"} gutterBottom>Contacto</Typography>
+        <Container className="mt-4 mb-4">
+            <h3 className="text-center">Contacto</h3>
 
-            <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} spacing={2}>
-
+            <Row className="d-flex flex-column flex-md-row">
                 {/* Contiene la imagen */}
-                <Box flex={1} component={"img"} src='/images/contact.jpg' height="600px" width="auto" />
+                <Col md={6} className="mb-4 mb-md-0">
+                    <Image src='/images/contact.jpg' alt="contact" height={600} width={400} />
+                </Col>
 
                 {/* Contiene el formulario de contacto */}
-                <Box flex={1} component="form" autoComplete="off" sx={{ backgroundColor: 'darkblue', padding: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <Box>
-                        <Typography variant='h4' color='inherit' align='center'>¡Contactamos contigo!</Typography>
-                        <TextField
-                            fullWidth
-                            margin="normal"
-                            id="name"
-                            label="Nombre"
-                            name="name"
-                            required
-                            variant='outlined'
-                            InputLabelProps={{ style: { color: 'white' } }}
-                            InputProps={{ style: { color: 'white' } }}
-                        />
-                        <TextField
-                            fullWidth
-                            margin="normal"
-                            id="email"
-                            label="Correo"
-                            name="email"
-                            type="email"
-                            required
-                            InputLabelProps={{ style: { color: 'white' } }}
-                            InputProps={{ style: { color: 'white' } }}
-                        />
-                        <TextField
-                            fullWidth
-                            margin="normal"
-                            id="message"
-                            label="Mensaje"
-                            name="message"
-                            multiline
-                            rows={4}
-                            required
-                            InputLabelProps={{ style: { color: 'white' } }}
-                            InputProps={{ style: { color: 'white' } }}
-                        />
-                        <Button variant="contained" color="primary" type="submit">
-                            Enviar
-                        </Button>
-                    </Box>
-
-                    {/* Contactanos tú */}
-                    <Box sx={{ p: 2, mt: 1, backgroundColor: 'darkblue', border: 1.5, borderRadius: 2, borderColor: "darkslateblue" }}>
-                        <Typography color='inherit' variant="h5" gutterBottom>O contactanos tú si lo prefieres...</Typography>
-                        <Typography color='inherit' variant='body2'>Correo: qkbyte@email.com</Typography>
-                        <Typography color='inherit' variant='body2'>Teléfono: 123456789</Typography>
-                    </Box>
-                </Box>
-            </Box>
-        </Container >
+                <Col md={6} className="bg-dark text-white p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h4 className="text-center">¡Contactamos contigo!</h4>
+                        <form>
+                            <div className="mb-3">
+                                <label htmlFor="name" className="form-label">Nombre</label>
+                                <input type="text" className="form-control" id="name" placeholder="Nombre" required />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="email" className="form-label">Correo</label>
+                                <input type="email" className="form-control" id="email" placeholder="Correo" required />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="message" className="form-label">Mensaje</label>
+                                <textarea className="form-control" id="message" rows={4} placeholder="Mensaje" required></textarea>
+                            </div>
+                            <Button variant="primary" type="submit">
+                                Enviar
+                            </Button>
+                        </form>
+                    </div>
+                    <div className="p-2 mt-3 bg-dark border border-dark rounded">
+                        <h5>O contactanos tú si lo prefieres...</h5>
+                        <p>Correo: qkbyte@email.com</p>
+                        <p>Teléfono: 123456789</p>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     );
 };
