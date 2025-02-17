@@ -5,20 +5,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 export default function BarraNavegacion() {
-    // Estado para el ancla del menú
-    const [anclaEl, establecerAnclaEl] = useState(null);
+    // Todas estas variables y funciones son para manejar el menú desplegable
     const tema = useTheme();
     const esPantallaPequena = useMediaQuery(tema.breakpoints.down('md'));
 
-    // Maneja la apertura del menú
-    const manejarMenu = (evento) => {
-        establecerAnclaEl(evento.currentTarget);
-    };
-
-    // Maneja el cierre del menú
-    const manejarCerrar = () => {
-        establecerAnclaEl(null);
-    };
+    const [anclaEl, establecerAnclaEl] = useState(null);
+    const abrirMenu = (ev) => establecerAnclaEl(ev.currentTarget);
+    const cerrarMenu = () => establecerAnclaEl(null);
 
     return (
         <AppBar position="static">
@@ -35,7 +28,7 @@ export default function BarraNavegacion() {
                             color="inherit"
                             aria-label="menu"
                             sx={{ mr: 2 }}
-                            onClick={manejarMenu}
+                            onClick={abrirMenu}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -53,7 +46,7 @@ export default function BarraNavegacion() {
                                 horizontal: 'right',
                             }}
                             open={Boolean(anclaEl)}
-                            onClose={manejarCerrar}
+                            onClose={cerrarMenu}
                         >
                             <MenuItem onClick={manejarCerrar}>
                                 <Link href="#" color="inherit" underline="none">Hardware y periféricos</Link>
