@@ -1,0 +1,104 @@
+{
+    "tiposUsuarios": [
+        {
+            "id": 1,
+            "nombre": "administrador"
+        },
+        {
+            "id": 2,
+            "nombre": "usuario"
+        }
+    ],
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "María",
+            "tipoUsuario": 1,
+            "user": "maria",
+            "passwd": "maria"
+        },
+        {
+            "id": 2,
+            "nombre": "Juan",
+            "tipoUsuario": 2,
+            "user": "juan",
+            "passwd": "Juan2023!"
+        },
+        {
+            "id": 3,
+            "nombre": "Ana",
+            "tipoUsuario": 1,
+            "user": "ana",
+            "passwd": "Ana#789"
+        },
+        {
+            "id": 4,
+            "nombre": "Luis",
+            "tipoUsuario": 2,
+            "user": "luis",
+            "passwd": "Luis_456"
+        }
+    ],
+    "productos": [
+        {
+            "path": "/images/productos/keyboard.jpg",
+            "title": "Teclado Mecánico",
+            "description": "Teclado mecánico de alta calidad con iluminación RGB personalizable.",
+            "price": 99.99
+        },
+        {
+            "path": "/images/productos/mouse.jpg",
+            "title": "Ratón para Juegos",
+            "description": "Ratón ergonómico para juegos con DPI ajustable y botones programables.",
+            "price": 49.99
+        },
+        {
+            "path": "/images/productos/monitor.jpg",
+            "title": "Monitor 4K",
+            "description": "Monitor 4K de 27 pulgadas con soporte HDR y biseles ultradelgados.",
+            "price": 299.99
+        },
+        {
+            "path": "/images/productos/headset.jpg",
+            "title": "Auriculares Inalámbricos",
+            "description": "Auriculares inalámbricos cómodos con micrófono con cancelación de ruido.",
+            "price": 79.99
+        },
+        {
+            "path": "/images/productos/ssd.jpg",
+            "title": "SSD de 1TB",
+            "description": "SSD de 1TB de alta velocidad con rápidas velocidades de lectura y escritura.",
+            "price": 129.99
+        },
+        {
+            "path": "/images/productos/ram.jpg",
+            "title": "Memoria RAM 16GB",
+            "description": "Memoria RAM DDR4 de 16GB con alta velocidad y rendimiento.",
+            "price": 89.99
+        },
+        {
+            "path": "/images/productos/gpu.jpg",
+            "title": "Tarjeta Gráfica",
+            "description": "Tarjeta gráfica de última generación con 8GB de memoria GDDR6.",
+            "price": 499.99
+        },
+        {
+            "path": "/images/productos/cpu.jpg",
+            "title": "Procesador",
+            "description": "Procesador de alto rendimiento con 8 núcleos y 16 hilos.",
+            "price": 299.99
+        },
+        {
+            "path": "/images/productos/motherboard.jpg",
+            "title": "Placa Base",
+            "description": "Placa base compatible con los últimos procesadores y tecnologías.",
+            "price": 149.99
+        },
+        {
+            "path": "/images/productos/power_supply.jpg",
+            "title": "Fuente de Alimentación",
+            "description": "Fuente de alimentación de 750W con certificación 80 Plus Gold.",
+            "price": 109.99
+        }
+    ]
+}
