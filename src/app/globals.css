@@ -10,42 +10,15 @@
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-}
-
-.nav-link {
-  text-decoration: underline;
-}
-
-a:hover, .nav-link:hover{
-  opacity:0.5 ;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a, p, Link{
+  color: var(--foreground);
 }
 
 /* Aseguramos que el body ocupe toda la altura de la pantalla */
