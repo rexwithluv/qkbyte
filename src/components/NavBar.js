@@ -19,22 +19,14 @@ export default function BarraNavegacion() {
 
                 <Navbar.Collapse id="navbarSupportedContent">
                     <Nav className="me-auto mb-2 mb-lg-0">
-                        <Link href="/hardware-perifericos" passHref>
-                            <Nav.Link>Hardware y periféricos</Nav.Link>
-                        </Link>
-                        <Link href="/software" passHref>
-                            <Nav.Link>Software</Nav.Link>
-                        </Link>
-                        <Link href="/pcs-montados" passHref>
-                            <Nav.Link>PCs montados</Nav.Link>
-                        </Link>
-                        <Link href="/contacto" passHref>
-                            <Nav.Link>Contacto</Nav.Link>
-                        </Link>
+                        <Nav.Link href='/hardware-perifericos'>Hardware y periféricos</Nav.Link>
+                        <Nav.Link href='/software'>Software</Nav.Link>
+                        <Nav.Link href='/pcs-montados'>PCs montados</Nav.Link>
+                        <Nav.Link href='/contacto'>Contacto</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
 
+            </Container>
         </Navbar>
     );
 }
