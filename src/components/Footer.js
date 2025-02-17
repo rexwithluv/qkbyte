@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { Container } from 'react-bootstrap';
 
 export default function Footer() {
     const anyoActual = new Date().getFullYear();
 
     return (
-        <div className="bg-primary text-center pt-2">
+        <Container fluid className="bg-primary text-center pt-2">
             <p>
                 <Link href="/politica-privacidad">Política de privacidad</Link>
                 &nbsp;|&nbsp;
@@ -14,6 +15,6 @@ export default function Footer() {
 
                 &copy; {anyoActual} QKByte - Todos los derechos reservados
             </p>
-        </div>
+        </Container>
     );
 }
