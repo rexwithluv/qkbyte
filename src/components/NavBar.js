@@ -30,10 +30,8 @@ export default function BarraNavegacion() {
                             sx={{ mr: 2 }}
                             onClick={abrirMenu}
                         >
-                            {/* MenuIcon: Ícono de menú de MUI */}
                             <MenuIcon />
                         </IconButton>
-                        {/* Menu: Componente de menú desplegable de MUI */}
                         <Menu
                             id="menu-appbar"
                             anchorEl={anclaEl}
@@ -51,16 +49,16 @@ export default function BarraNavegacion() {
                         >
                             {/* MenuItem: Elemento de menú de MUI */}
                             <MenuItem onClick={cerrarMenu}>
-                                <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Hardware y periféricos</Link>
+                                <Link href="#" underline="none" color="inherit">Hardware y periféricos</Link>
                             </MenuItem>
                             <MenuItem onClick={cerrarMenu}>
-                                <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Software</Link>
+                                <Link href="#" underline="none" color="inherit">Software</Link>
                             </MenuItem>
                             <MenuItem onClick={cerrarMenu}>
-                                <Link href="#" style={{ color: 'inherit', textDecoration: 'none' }}>PCs montados</Link>
+                                <Link href="#" underline="none" color="inherit">PCs montados</Link>
                             </MenuItem>
                             <MenuItem onClick={cerrarMenu}>
-                                <Link href="/contacto" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</Link>
+                                <Link href="/contacto" underline="none" color="inherit">Contacto</Link>
                             </MenuItem>
                         </Menu>
                     </>
