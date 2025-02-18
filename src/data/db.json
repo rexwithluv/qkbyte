@@ -39,7 +39,7 @@
       "passwd": "Luis_456"
     }
   ],
-  "productos": [
+  "hardware": [
     {
       "id": 1,
       "imagen": "/images/hardware-perifericos/teclado.jpg",
@@ -109,6 +109,78 @@
       "titulo": "Fuente de Alimentación",
       "descripcion": "Fuente de alimentación de 750W con certificación 80 Plus Gold.",
       "precio": 109.99
+    }
+  ],
+  "software": [
+    {
+      "id": 1,
+      "imagen": "/images/software/antivirus.jpg",
+      "titulo": "Antivirus Pro",
+      "descripcion": "Protección avanzada contra virus y malware con actualizaciones automáticas.",
+      "precio": 39.99
+    },
+    {
+      "id": 2,
+      "imagen": "/images/software/suite-ofimatica.jpg",
+      "titulo": "Suite Ofimática",
+      "descripcion": "Completa suite ofimática con procesador de textos, hojas de cálculo y más.",
+      "precio": 99.99
+    },
+    {
+      "id": 3,
+      "imagen": "/images/software/canva.jpg",
+      "titulo": "Editor de Fotos",
+      "descripcion": "Software profesional para edición de fotos con múltiples herramientas avanzadas.",
+      "precio": 59.99
+    },
+    {
+      "id": 4,
+      "imagen": "/images/software/premiere.jpg",
+      "titulo": "Editor de Video",
+      "descripcion": "Potente editor de video con soporte para 4K y múltiples efectos.",
+      "precio": 79.99
+    },
+    {
+      "id": 5,
+      "imagen": "/images/software/vpn.jpg",
+      "titulo": "Servicio VPN",
+      "descripcion": "Servicio VPN para navegación segura y privada en internet.",
+      "precio": 49.99
+    },
+    {
+      "id": 6,
+      "imagen": "/images/software/backup.jpg",
+      "titulo": "Software de Backup",
+      "descripcion": "Herramienta de backup automática para proteger tus datos importantes.",
+      "precio": 29.99
+    },
+    {
+      "id": 7,
+      "imagen": "/images/software/editor-audio.jpg",
+      "titulo": "Editor de Música",
+      "descripcion": "Software para edición y mezcla de música con múltiples pistas y efectos.",
+      "precio": 69.99
+    },
+    {
+      "id": 8,
+      "imagen": "/images/software/photoshop.jpg",
+      "titulo": "Diseño Gráfico",
+      "descripcion": "Herramienta de diseño gráfico con soporte para vectores y gráficos rasterizados.",
+      "precio": 89.99
+    },
+    {
+      "id": 9,
+      "imagen": "/images/software/asana.jpg",
+      "titulo": "Gestión de Proyectos",
+      "descripcion": "Software para gestión de proyectos con seguimiento de tareas y colaboración.",
+      "precio": 119.99
+    },
+    {
+      "id": 10,
+      "imagen": "/images/software/sap.jpg",
+      "titulo": "Software de Contabilidad",
+      "descripcion": "Herramienta de contabilidad para pequeñas y medianas empresas.",
+      "precio": 149.99
     }
   ]
 }
