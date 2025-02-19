@@ -1,19 +1,18 @@
-import { Container, Row, Col, Button } from 'react-bootstrap';
 import Image from 'next/image';
 
 export default function Contacto() {
     return (
-        <Container className="mt-4 mb-4">
-            <h3 className="text-center">Contacto</h3>
+        <div className="container my-4">
+            <h2 className="text-center mb-3">Contacto</h2>
 
-            <Row className="d-flex flex-column flex-md-row">
+            <div className="row d-flex flex-column flex-md-row">
                 {/* Contiene la imagen */}
-                <Col md={6} className="mb-4 mb-md-0">
+                <div className="col-md-6 mb-4 mb-md-0 d-none d-lg-block">
                     <Image src='/images/contact.jpg' alt="contact" height={600} width={400} />
-                </Col>
+                </div>
 
                 {/* Contiene el formulario de contacto */}
-                <Col md={6} className="bg-dark text-white p-4 d-flex flex-column justify-content-between">
+                <div className="col-md-6 bg-dark text-white p-4 d-flex flex-column justify-content-between">
                     <div>
                         <h4 className="text-center">¡Contactamos contigo!</h4>
                         <form>
@@ -29,18 +28,22 @@ export default function Contacto() {
                                 <label htmlFor="message" className="form-label">Mensaje</label>
                                 <textarea className="form-control" id="message" rows={4} placeholder="Mensaje" required></textarea>
                             </div>
-                            <Button variant="primary" type="submit">
+                            <button className="btn btn-primary" type="submit">
                                 Enviar
-                            </Button>
+                            </button>
                         </form>
                     </div>
+
+                    {/* Contactanos tú si prefieres */}
                     <div className="p-2 mt-3 bg-dark border border-dark rounded">
                         <h5>O contactanos tú si lo prefieres...</h5>
-                        <p>Correo: qkbyte@email.com</p>
-                        <p>Teléfono: 123456789</p>
+                        <p>
+                            Correo: qkbyte@email.com <br />
+                            Teléfono: 123456789
+                        </p>
                     </div>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 };
