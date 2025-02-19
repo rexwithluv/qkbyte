@@ -1,7 +1,9 @@
 "use client";
 
 import Link from 'next/link';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import { BsPersonFill } from 'react-icons/bs';
 
 export default function BarraNavegacion() {
     const [smallScreen, setSmallScreen] = useState(false);
@@ -24,15 +26,22 @@ export default function BarraNavegacion() {
 
     return (
         <Navbar bg="primary" variant="dark" expand="lg" className="py-3">
-
-            <Container>
+            {!smallScreen && (
                 <Link href="/" passHref className='text-decoration-none'>
-                    <Navbar.Brand className="me-5">
+                    <Navbar.Brand className="ms-4 d-flex align-items-center">
                         QKByte
                     </Navbar.Brand>
                 </Link>
+            )}
 
-                {/* El desplegable */}
+            <Container>
+                {smallScreen && (
+                    <Link href="/" passHref className='text-decoration-none'>
+                        <Navbar.Brand className="ms-4 d-flex align-items-center">
+                            QKByte
+                        </Navbar.Brand>
+                    </Link>
+                )}
                 <Navbar.Toggle aria-controls="navbarSupportedContent" className="ms-auto" />
 
                 <Navbar.Collapse id="navbarSupportedContent">
@@ -42,6 +51,14 @@ export default function BarraNavegacion() {
                         <Nav.Link href='/pcs-montados'>PCs montados</Nav.Link>
                         <Nav.Link href='/contacto'>Contacto</Nav.Link>
                     </Nav>
+
+                    <Nav>
+                        <NavDropdown title={<BsPersonFill />} id="user-dropdown" alignRight>
+                            <NavDropdown.Item href="/login">Iniciar sesión</NavDropdown.Item>
+                            <NavDropdown.Item href="/cerrar-sesion">Cerrar sesión</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+
                 </Navbar.Collapse>
 
             </Container>
