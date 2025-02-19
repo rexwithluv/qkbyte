@@ -53,9 +53,9 @@ export default function BarraNavegacion() {
                     </Nav>
 
                     <Nav>
-                        <NavDropdown title={<BsPersonFill />} id="user-dropdown" alignRight>
+                        <NavDropdown title={<BsPersonFill />} id="user-dropdown" align={"start"} drop={smallScreen ? "down" : "start"}>
                             <NavDropdown.Item href="/login">Iniciar sesión</NavDropdown.Item>
-                            <NavDropdown.Item href="/cerrar-sesion">Cerrar sesión</NavDropdown.Item>
+                            <NavDropdown.Item onClick={logout}>Cerrar sesión</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 
