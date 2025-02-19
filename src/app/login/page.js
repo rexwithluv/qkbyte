@@ -48,8 +48,6 @@ export default function Login() {
                     window.location.href = "/";
                 }
             });
-
-            localStorage.setItem("user", JSON.stringify(user));
         } else {
             Swal.fire({
                 icon: 'error',
