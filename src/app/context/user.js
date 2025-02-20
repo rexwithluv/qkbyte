@@ -15,8 +15,6 @@ export default function UserProvider({ children }) {
         }
     }, []);
 
-    console.log(isLogueado, user);
-
     return (
         <UserContext.Provider value={{ isLogueado, user }}>
             {children}
