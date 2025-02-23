@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import styles from './page.module.css';
+
 
 export default function HardwarePerifericosPage() {
     const [productos, setProductos] = useState([]);
@@ -33,6 +34,12 @@ export default function HardwarePerifericosPage() {
                             <Card.Body className={styles['card-body']}>
                                 <Card.Title>{product.titulo}</Card.Title>
                                 <Card.Text>{product.descripcion}</Card.Text>
+                                <Row>
+                                    <Col className="d-flex justify-content-between align-items-center">
+                                        <Card.Text className="mb-0">{product.precio.toString().replace(".", ",")}€</Card.Text>
+                                        <Button variant="primary" className="ms-2">Añadir al carrito</Button>
+                                    </Col>
+                                </Row>
                             </Card.Body>
                         </Card>
                     </Col>
