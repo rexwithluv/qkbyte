@@ -3,19 +3,22 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
+import CartProvider from "./context/carrito";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es-ES">
       <body className="layout-body">
         <UserProvider>
-          <NavBar />
+          <CartProvider>
+            <NavBar />
 
-          <main className="main-content">
-            {children}
-          </main>
+            <main className="main-content">
+              {children}
+            </main>
 
-          <Footer />
+            <Footer />
+          </CartProvider>
         </UserProvider>
       </body>
     </html>

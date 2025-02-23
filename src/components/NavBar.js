@@ -1,13 +1,18 @@
 "use client";
 
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
-import { BsPersonFill } from "react-icons/bs";
+import { CartContext } from "@/app/context/carrito";
 import { UserContext } from "@/app/context/user";
+import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
+import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { BsPersonFill, BsCartFill } from "react-icons/bs"; // Importar el icono del carrito
 
 export default function NavBar() {
+    const { isLogueado } = useContext(UserContext);
+    const { carrito } = useContext(CartContext);
+
     const [smallScreen, setSmallScreen] = useState(false);
+
     useEffect(() => {
         const handleResize = () => {
             setSmallScreen(window.innerWidth < 992); // 992px es el breakpoint para lg
@@ -23,8 +28,6 @@ export default function NavBar() {
         localStorage.removeItem("login");
         window.location.href = "/";
     };
-
-    const { isLogueado, user } = React.useContext(UserContext);
 
     return (
         <Navbar
@@ -72,7 +75,11 @@ export default function NavBar() {
                         <Nav.Link href="/contacto">Contacto</Nav.Link>
                     </Nav>
 
-                    <Nav>
+                    <Nav className="gap-3">
+                        <Nav.Link href="/cart" className="d-flex align-items-center">
+                            <BsCartFill />
+                            <span className="ms-2">{carrito.length}</span>
+                        </Nav.Link>
                         <NavDropdown
                             title={<BsPersonFill />}
                             id="user-dropdown"

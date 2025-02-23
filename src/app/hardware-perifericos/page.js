@@ -1,14 +1,16 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { CartContext } from "@/app/context/carrito";
+import { useContext, useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import styles from './page.module.css';
 
-
 export default function HardwarePerifericosPage() {
-    const [productos, setProductos] = useState([]);
-    const productosURL = "http://localhost:5000/hardware";
+    const { anyadirAlCarrito } = useContext(CartContext);
 
+    const [productos, setProductos] = useState([]);
+
+    const productosURL = "http://localhost:5000/hardware";
     const getProductos = async () => {
         try {
             const response = await fetch(productosURL);
@@ -37,7 +39,7 @@ export default function HardwarePerifericosPage() {
                                 <Row>
                                     <Col className="d-flex justify-content-between align-items-center">
                                         <Card.Text className="mb-0">{product.precio.toString().replace(".", ",")}€</Card.Text>
-                                        <Button variant="primary" className="ms-2">Añadir al carrito</Button>
+                                        <Button variant="primary" className="ms-2" onClick={() => anyadirAlCarrito(product.id)}>Añadir al carrito</Button>
                                     </Col>
                                 </Row>
                             </Card.Body>

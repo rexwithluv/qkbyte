@@ -1,14 +1,14 @@
 "use client";
 
-import React from "react";
+import { useState, useEffect, createContext } from "react";
 
-export const UserContext = React.createContext();
+export const UserContext = createContext();
 
 export default function UserProvider({ children }) {
-    const [isLogueado, setIsLogueado] = React.useState(false);
-    const [user, setUser] = React.useState({});
+    const [isLogueado, setIsLogueado] = useState(false);
+    const [user, setUser] = useState({});
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (localStorage.getItem("login")) {
             setIsLogueado(true);
             setUser(JSON.parse(localStorage.getItem("login")));
