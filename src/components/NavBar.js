@@ -76,7 +76,7 @@ export default function NavBar() {
                     </Nav>
 
                     <Nav className="gap-3">
-                        <Nav.Link href="/cart" className="d-flex align-items-center">
+                        <Nav.Link href="/carrito" className="d-flex align-items-center">
                             <BsCartFill />
                             <span className="ms-2">{carrito.length}</span>
                         </Nav.Link>
