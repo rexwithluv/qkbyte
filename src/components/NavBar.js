@@ -8,10 +8,11 @@ import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { BsPersonFill, BsCartFill } from "react-icons/bs"; // Importar el icono del carrito
 
 export default function NavBar() {
-    const { isLogueado } = useContext(UserContext);
+    const { isLogueado, user } = useContext(UserContext);
     const { carrito } = useContext(CartContext);
 
     const [smallScreen, setSmallScreen] = useState(false);
+    const isAdmin = 
 
     useEffect(() => {
         const handleResize = () => {
