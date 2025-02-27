@@ -9,9 +9,9 @@ export default function UserProvider({ children }) {
     const [user, setUser] = useState({});
 
     useEffect(() => {
-        if (localStorage.getItem("login")) {
+        if (sessionStorage.getItem("login")) {
             setIsLogueado(true);
-            setUser(JSON.parse(localStorage.getItem("login")));
+            setUser(JSON.parse(sessionStorage.getItem("login")));
         }
     }, []);
 

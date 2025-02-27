@@ -44,7 +44,7 @@ export default function Login() {
                 showConfirmButton: false,
                 timer: 3000,
                 willClose: () => {
-                    localStorage.setItem("login", JSON.stringify(user));
+                    sessionStorage.setItem("login", JSON.stringify(user));
                     window.location.href = "/";
                 }
             });
