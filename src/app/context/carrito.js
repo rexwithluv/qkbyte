@@ -5,38 +5,35 @@ import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 export default function CartProvider({ children }) {
-    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")));
+    const [carrito, setCarrito] = useState(() => {
+        const carritoExistente = JSON.parse(localStorage.getItem("carrito"));
+        return carritoExistente || [];
+    });
 
     useEffect(() => {
-        const carritoExistente = JSON.parse(localStorage.getItem("carrito"));
-        if (carritoExistente) {
-            setCarrito(carritoExistente);
-        } else {
-            localStorage.setItem("carrito", JSON.stringify([]));
-        }
-    }, []);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    }, [carrito]);
 
     const anyadirAlCarrito = (producto) => {
+        setCarrito((carrito) => [...carrito, producto]);
+    };
+
+    const eliminarDelCarrito = (productoId) => {
         setCarrito((carrito) => {
-            const nuevoCarrito = [...carrito, producto];
-            localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-            return nuevoCarrito;
+            const index = carrito.findIndex(producto => producto.id === productoId);
+            if (index !== -1) {
+                const nuevoCarrito = [...carrito];
+                nuevoCarrito.splice(index, 1);
+                localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+                return nuevoCarrito;
+            }
+            return carrito;
         });
     };
 
     return (
-        <CartContext.Provider value={{ carrito, anyadirAlCarrito }}>
+        <CartContext.Provider value={{ carrito, anyadirAlCarrito, eliminarDelCarrito }}>
             {children}
         </CartContext.Provider>
     )
 }
-
-/*     useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem("carrito"));
-        if (storedCart) {
-            setCarrito(storedCart);
-        } else {
-            localStorage.setItem("carrito", JSON.stringify([]));
-        }
-    }, []);
-} */
