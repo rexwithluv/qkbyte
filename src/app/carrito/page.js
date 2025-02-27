@@ -12,6 +12,11 @@ const CarritoPage = () => {
         return acc;
     }, {});
 
+    const pagar = () => {
+        localStorage.removeItem("carrito");
+        window.location.href = "/";
+    }
+
     const totalPrecio = carrito.reduce((acc, producto) => acc + producto.precio, 0).toFixed(2);
 
     return (
@@ -28,7 +33,7 @@ const CarritoPage = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.values(productosUnicos).map((producto) => (
+                        {Object.values(productosUnicos).map(producto => (
                             <tr key={producto.id}>
                                 <td>{producto.titulo}</td>
                                 <td>{carrito.filter(p => p.id === producto.id).length}</td>
@@ -44,8 +49,14 @@ const CarritoPage = () => {
                             </tr>
                         ))}
                         <tr>
-                            <td colSpan="3"><strong>Total</strong></td>
+                            <td><strong>Total</strong></td>
+                            <td><strong>{carrito.length}</strong></td>
                             <td><strong>{totalPrecio.toString().replace(".", ",")}€</strong></td>
+                            <td>
+                                <button type='button' className="btn btn-primary" onClick={() => pagar()}>
+                                    Pagar
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

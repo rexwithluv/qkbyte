@@ -5,14 +5,14 @@ import { UserContext } from "@/app/context/user";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
-import { BsPersonFill, BsCartFill } from "react-icons/bs"; // Importar el icono del carrito
+import { BsPersonFill, BsCartFill, BsLockFill } from "react-icons/bs"; // Importar el icono del carrito y el candado
 
 export default function NavBar() {
     const { isLogueado, user } = useContext(UserContext);
     const { carrito } = useContext(CartContext);
 
     const [smallScreen, setSmallScreen] = useState(false);
-    const isAdmin = 
+    const isAdmin = user?.tipoUsuario === 1; // Verificar si el usuario es administrador
 
     useEffect(() => {
         const handleResize = () => {
@@ -77,12 +77,19 @@ export default function NavBar() {
                     </Nav>
 
                     <Nav className="gap-3">
-                        {isLogueado &&
-                            <Nav.Link href="/carrito" className="d-flex align-items-center">
-                                <BsCartFill />
-                                <span className="ms-2">{carrito ? carrito.length : 0}</span>
-                            </Nav.Link>
-                        }
+                        {isLogueado && (
+                            <>
+                                <Nav.Link href="/carrito" className="d-flex align-items-center">
+                                    <BsCartFill />
+                                    <span className="ms-2">{carrito ? carrito.length : 0}</span>
+                                </Nav.Link>
+                                {isAdmin && (
+                                    <Nav.Link href="/admin" className="d-flex align-items-center">
+                                        <BsLockFill />
+                                    </Nav.Link>
+                                )}
+                            </>
+                        )}
                         <NavDropdown
                             title={<BsPersonFill />}
                             id="user-dropdown"
