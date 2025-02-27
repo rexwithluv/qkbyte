@@ -39,7 +39,7 @@ export default function HardwarePerifericosPage() {
                                 <Row>
                                     <Col className="d-flex justify-content-between align-items-center">
                                         <Card.Text className="mb-0">{product.precio.toString().replace(".", ",")}€</Card.Text>
-                                        <Button variant="primary" className="ms-2" onClick={() => anyadirAlCarrito(product.id)}>Añadir al carrito</Button>
+                                        <Button variant="primary" className="ms-2" onClick={() => anyadirAlCarrito(product)}>Añadir al carrito</Button>
                                     </Col>
                                 </Row>
                             </Card.Body>
